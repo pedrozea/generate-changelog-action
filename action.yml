@@ -1,6 +1,14 @@
-# action.yml
 name: 'Generate Changelog'
 description: 'Generates a changelog based on conventional commits'
+
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: 'ubuntu-latest'
+
+permissions:
+  contents: write
+
+jobs:
+  - name: Conventional Changelog Action
+    uses: TriPSs/conventional-changelog-action@v3
+    with:
+      github-token: ${{ secrets.github_token }}
