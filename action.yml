@@ -1,0 +1,6 @@
+# action.yml
+name: 'Generate Changelog'
+description: 'Generates a changelog based on conventional commits'
+runs:
+  using: 'node12'
+  main: 'index.js'
