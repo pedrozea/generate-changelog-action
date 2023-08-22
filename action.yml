@@ -1,6 +1,11 @@
 name: 'Generate Changelog'
 description: 'Generates a changelog based on conventional commits'
 
+inputs: 
+  github-token:
+    description: 'GitHub Token'
+    required: true
+
 runs:
   using: 'ubuntu-latest'
 
@@ -8,7 +13,10 @@ permissions:
   contents: write
 
 jobs:
+  - name: Checkout code
+    uses: actions/checkout@v2
+
   - name: Conventional Changelog Action
     uses: TriPSs/conventional-changelog-action@v3
     with:
-      github-token: ${{ secrets.github_token }}
+        token: ${{ inputs.token }}
