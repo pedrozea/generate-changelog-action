@@ -3,7 +3,7 @@ description: 'Generates a changelog based on conventional commits'
 
 inputs: 
   github-token:
-    description: ''GitHub token utilized for connecting to the repository'
+    description: 'GitHub token utilized for connecting to the repository'
     required: true
 
 permissions:
