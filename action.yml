@@ -3,13 +3,13 @@ description: 'Generates a changelog based on conventional commits'
 
 inputs: 
   github-token:
-    description: 'Repo's GitHub Token'
+    description: 'Repo GitHub Token'
     required: true
 
 permissions:
     id-token: write
     contents: write
-    
+
 runs:
   using: "composite"
   steps:
