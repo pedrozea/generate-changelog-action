@@ -3,7 +3,7 @@ description: 'Generates a changelog based on conventional commits'
 
 inputs: 
   github-token:
-    description: 'Repo GitHub Token'
+    description: ''GitHub token utilized for connecting to the repository'
     required: true
 
 permissions:
@@ -17,9 +17,7 @@ runs:
       uses: actions/checkout@v2
 
     - name: conventional changelog action
-      id: changelog
       # https://github.com/TriPSs/conventional-changelog-action
       uses: TriPSs/conventional-changelog-action@v3
       with:
         github-token: github-token
-        skip-tag: true
