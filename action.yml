@@ -3,20 +3,22 @@ description: 'Generates a changelog based on conventional commits'
 
 inputs: 
   github-token:
-    description: 'GitHub Token'
+    description: 'Repo's GitHub Token'
     required: true
 
-runs:
-  using: 'ubuntu-latest'
-
 permissions:
-  contents: write
+    id-token: write
+    contents: write
+    
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+          uses: actions/checkout@v2
 
-jobs:
-  - name: Checkout code
-    uses: actions/checkout@v2
-
-  - name: Conventional Changelog Action
-    uses: TriPSs/conventional-changelog-action@v3
-    with:
-        token: ${{ inputs.token }}
+    - name: conventional changelog action
+      id: changelog
+      # https://github.com/TriPSs/conventional-changelog-action
+      uses: TriPSs/conventional-changelog-action@v3
+      with:
+        github-token: github-token
