@@ -1,4 +1,4 @@
-# pedrozea Conventional Changelog Action
+# Conventional Changelog Action
 
 This GitHub Action generates a changelog based on commits that follow the Conventional Commits format.
 
